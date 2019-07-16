@@ -1,6 +1,6 @@
 package com.lgy.learngit.dao;
 
-import com.lgy.learngit.entities.Department;
+import com.lgy.learngit.bean.Department;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package com.lgy.learngit.entities;
+package com.lgy.learngit.bean;
 
 public class Department {
 
