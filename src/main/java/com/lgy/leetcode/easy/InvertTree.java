@@ -1,4 +1,6 @@
-package com.lgy.leetcode;
+package com.lgy.leetcode.easy;
+
+import com.lgy.leetcode.domain.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

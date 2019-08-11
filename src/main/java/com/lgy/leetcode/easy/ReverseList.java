@@ -1,7 +1,4 @@
-package com.lgy.leetcode;
-
-import java.util.LinkedList;
-import java.util.List;
+package com.lgy.leetcode.easy;
 
 /**
  * 反转一个单链表。

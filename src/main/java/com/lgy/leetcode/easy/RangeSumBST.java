@@ -1,4 +1,6 @@
-package com.lgy.leetcode;
+package com.lgy.leetcode.easy;
+
+import com.lgy.leetcode.domain.TreeNode;
 
 /**
  * 给定二叉搜索树的根结点 root，返回 L 和 R（含）之间的所有结点的值的和。

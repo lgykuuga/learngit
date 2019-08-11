@@ -1,4 +1,6 @@
-package com.lgy.leetcode;
+package com.lgy.leetcode.easy;
+
+import com.lgy.leetcode.domain.TreeNode;
 
 /**
  * 给定一个二叉树，检查它是否是镜像对称的。

@@ -1,4 +1,4 @@
-package com.lgy.leetcode;
+package com.lgy.leetcode.easy;
 
 /**
  * 你现在是棒球比赛记录员。
