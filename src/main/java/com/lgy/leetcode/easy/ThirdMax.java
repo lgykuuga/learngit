@@ -1,7 +1,6 @@
 package com.lgy.leetcode.easy;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 给定一个非空数组，返回此数组中第三大的数。如果不存在，则返回数组中最大的数。要求算法时间复杂度必须是O(n)。
@@ -37,29 +36,58 @@ import java.util.Set;
  */
 public class ThirdMax {
 
-    public int thirdMax(int[] nums) {
-        if(nums.length < 3) {
-            return max(nums);
-        }
-
-        Set<Integer> set = new HashSet<>();
-        for (int num : nums) {
-            set.add(num);
-        }
-
-
-
+    public static void main(String[] args) {
+        int[] nums = new int[]{1, 2};
+        System.out.println(thirdMax(nums));
     }
 
-    private int max(int[] nums) {
-        int max = nums[0];
-        for (int num : nums) {
-            if (num > max) {
-                max = num;
+    public static int thirdMax(int[] nums) {
+        Arrays.sort(nums);
+        //去重
+        List<Integer> list = new ArrayList<>();
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (!list.contains(nums[i])) {
+                list.add(nums[i]);
             }
         }
-        return max;
+
+        if (list.size() == 2) {
+            return Math.max(list.get(0), list.get(1));
+        } else if (list.size() == 1) {
+            return list.get(0);
+        }
+
+        return list.get(2);
     }
+
+    public static int thirdMax2(int[] nums) {
+        long first = Long.MIN_VALUE;
+        long second = Long.MIN_VALUE;
+        long third = Long.MIN_VALUE;
+
+        for (int num : nums) {
+            if (num > first) {
+                third = second;
+                second = first;
+                first = num;
+            } else if (num > second && num < first) {
+                third = second;
+                second = num;
+            } else if (num > third && num < second) {
+                third = num;
+            }
+        }
+
+        if (third == Long.MIN_VALUE || third == second) {
+            return (int)first;
+        }
+
+        return (int)third;
+
+    }
+
+
+
 
 
 }
