@@ -1,5 +1,7 @@
 package com.lgy.leetcode.easy;
 
+import com.lgy.leetcode.domain.ListNode;
+
 /**
  * 反转一个单链表。
  *

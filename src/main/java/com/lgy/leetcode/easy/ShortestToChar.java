@@ -34,7 +34,8 @@ public class ShortestToChar {
 
     public static int[] shortestToChar(String S, char C) {
         int array[] = new int[S.length()];
-        List<Integer> list = new ArrayList<Integer>();//C数组下标集合
+        //C数组下标集合
+        List<Integer> list = new ArrayList<Integer>();
         int j = 0;
         char[] chars = S.toCharArray();
         for (int i = 0; i < chars.length; i++) {
@@ -47,7 +48,8 @@ public class ShortestToChar {
         for (int i = 0; i < chars.length; i++) {
             int min = S.length();
             for (int k = 0; k < list.size(); k++) {
-                int temp = Math.abs(i - list.get(k));//最短路径
+                //最短路径
+                int temp = Math.abs(i - list.get(k));
                 if (temp == 0) {
                     min = 0;
                     break;
