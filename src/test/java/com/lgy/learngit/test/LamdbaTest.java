@@ -32,11 +32,30 @@ public class LamdbaTest {
             i++;
         }
 
+        ShopBean shopBean = new ShopBean();
+        shopBean.setShopCode("shop3");
+        shopBean.setPlateform("TB");
+        shops.add(shopBean);
+
         for (ShopBean shop : shops) {
             System.out.println("分组前:" + shop);
         }
         System.out.println("=============================================================");
-        calculate(shops);
+//        calculate(shops);
+        dis(shops);
+    }
+
+    private static void dis(List<ShopBean> shops) {
+        shops = shops.stream()
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toCollection(
+                                () -> new TreeSet<>(
+                                        Comparator.comparing(
+                                                p -> p.getShopCode()+p.getPlateform()))),
+                        ArrayList::new));
+
+        System.out.println(shops);
+        System.out.println("size:" + shops.size());
 
     }
 
