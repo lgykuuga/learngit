@@ -19,7 +19,7 @@ public class LamdbaTest02 {
 
         for (int i = 0; i < 5; i++) {
             Person person = new Person();
-            person.setName("A" + i);
+            person.setName(null);
             person.setAge(i + 10);
             person.setWork(i);
 
@@ -35,6 +35,7 @@ public class LamdbaTest02 {
         log.info(people);
 
         log.info(assemblyFailureMessage(people));
+        log.info(test3(people));
 
     }
 
@@ -44,6 +45,14 @@ public class LamdbaTest02 {
                 .filter(p -> p.getAge() > 12)
                 .map(p -> String.format("name:%s,box:%s", p.getName(), p.getBox().getBody()))
                 .collect(Collectors.joining(";"));
+    }
+
+    private static String test3(List<Person> people) {
+
+        return people.stream()
+                .map(Person::getName)
+                .findFirst()
+                .orElse("");
     }
 
 }
