@@ -1,4 +1,4 @@
-package com.lgy.learngit.refactor;
+package com.lgy.learngit.refactor.day01.fizzbuzz;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -19,10 +19,12 @@ public class FizzBuzzTest {
         Assertions.assertEquals("1", result);
     }
 
+//    @ParameterizedTest
+//    @ValueSource(ints = {6,9,12})
     @Test
-    public void should_return_fizz_when_transfer_given_input_3(){
+    public void should_return_fizz_when_transfer_given_input_multiple_of_3(){
         //given
-        int input = 3;
+        int input = 6;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
         //when
