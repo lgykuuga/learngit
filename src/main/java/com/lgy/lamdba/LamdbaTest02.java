@@ -1,12 +1,10 @@
 package com.lgy.lamdba;
-import com.lgy.lamdba.domain.Box;
 
 import com.google.common.collect.Lists;
+import com.lgy.lamdba.domain.Box;
 import com.lgy.lamdba.domain.Person;
-import com.lgy.lamdba.domain.Worker;
 import lombok.extern.log4j.Log4j2;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,6 +34,7 @@ public class LamdbaTest02 {
 
         log.info(assemblyFailureMessage(people));
         log.info(test3(people));
+        log.info(test4(people));
 
     }
 
@@ -48,6 +47,14 @@ public class LamdbaTest02 {
     }
 
     private static String test3(List<Person> people) {
+
+        return people.stream()
+                .map(Person::getName)
+                .findFirst()
+                .orElse("");
+    }
+
+    private static String test4(List<Person> people) {
 
         return people.stream()
                 .map(Person::getName)

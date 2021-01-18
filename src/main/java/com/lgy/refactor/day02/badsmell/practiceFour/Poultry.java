@@ -2,8 +2,10 @@ package com.lgy.refactor.day02.badsmell.practiceFour;
 
 public abstract class Poultry extends Animal {
 
-    public String layEgg() { // 下蛋
-        return "Get an egg.";
+    private static final String GET_AN_EGG = "Get an egg.";
+
+    private String layEgg() { // 下蛋
+        return GET_AN_EGG;
     }
 
     @Override
