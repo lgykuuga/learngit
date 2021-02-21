@@ -6,6 +6,7 @@ import com.lgy.lamdba.domain.Person;
 import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Log4j2
@@ -51,7 +52,7 @@ public class LamdbaTest02 {
         return people.stream()
                 .map(Person::getName)
                 .findFirst()
-                .orElse("");
+                .orElse("1111");
     }
 
     private static String test4(List<Person> people) {
